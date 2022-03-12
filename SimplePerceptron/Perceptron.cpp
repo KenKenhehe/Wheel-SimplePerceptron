@@ -4,7 +4,8 @@ Perceptron::Perceptron(int input_size)
 {
 	for (int i = 0; i < input_size; ++i)
 	{
-		m_weights.emplace_back((float(rand()) / float((RAND_MAX)) * 2 - 1));
+		float ran_num = float(rand());
+		m_weights.emplace_back(ran_num / float((RAND_MAX)) * 2 - 1);
 		std::cout << m_weights[i] << std::endl;
 	}
 }
@@ -29,6 +30,7 @@ void Perceptron::train(const std::vector<float>& inputs, int target)
 	for (int i = 0; i < m_weights.size(); ++i)
 	{
 		m_weights[i] += error * inputs[i] * m_learning_rate;
+		std::cout << "weights, " << i << " after this training: " << m_weights[i] << std::endl;
 	}
 }
 

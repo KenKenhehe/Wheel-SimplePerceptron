@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <stdlib.h>
 
 class Perceptron
 {
@@ -20,7 +21,7 @@ private:
 	int guess(const std::vector<float>& inputs);
 	std::vector<float> m_weights;
 	std::vector<float> m_inputs;
-	float m_learning_rate = 0.2f;
+	float m_learning_rate = 0.4f;
 
 };
 
